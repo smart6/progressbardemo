@@ -63,3 +63,4 @@ gulp.task('inject', function () {
 });
 // Default gulp task
 gulp.task('default', ['sass', 'concat', 'inject', 'watch', 'serve']);
+gulp.task('build', ['sass', 'concat', 'inject']);
