@@ -1,0 +1,29 @@
+.bar-col{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bar{
+    border: 1px solid cornflowerblue;
+    box-sizing: border-box;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+    .mark{
+        height: 30px;
+        background-color: #0369c1;
+        &.overflow{
+            background-color: red;
+        }
+    }
+    &::after{
+        content: attr(data-percentage);
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        line-height: 30px;
+        text-align: center;
+    }
+}

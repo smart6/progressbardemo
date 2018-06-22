@@ -1,0 +1,24 @@
+//Controls
+h1{
+    text-align: center;
+}
+.controls{
+    text-align: right;
+    background-color: #f0fff5;
+    padding: 10px;
+    border:1px solid #64edc2;
+    button{
+        cursor: pointer;
+    }
+}
+.col-control{
+    margin-top: 20px;
+    select{
+        float: left;
+    }
+    button{
+        cursor: pointer;
+        float: right;
+        margin-left: 20px;
+    }
+}
