@@ -1,0 +1,51 @@
+<nav class="navbar navbar-dark navbar-expand-lg" [style.backgroundColor]="selectedTheme">
+  <a class="navbar-brand" href="#">
+    <img height="40" src="assets/img/angular.svg" width="37">
+    <img height="40" src="assets/img/bootstrap.png" width="48">
+  </a>
+  <div class="navbar-text">Progress Bar - Angular6, Bootstarap4</div>
+</nav>
+<div class="container">
+  <app-loader [loading]="isLoading"></app-loader>
+  <div class="row mt-5">
+    <div class="col-12">
+      <label class="float-left">Theme:</label>
+      <div class="d-inline float-left mx-2">
+          <select class="form-control" (change)="selectedTheme=$event.target.value;">
+            <option  
+              [value]="t.value" 
+              *ngFor="let t of themeOpt">{{t.name}}</option>
+          </select>
+      </div>
+      <button 
+        (click)="loadBarData()"
+        type="button" 
+        class="btn float-right" [style.backgroundColor]="selectedTheme" [style.color]="'#fff'">Load Remote Data</button>
+    </div>
+    <div class="col-12" *ngIf="barData">
+      <div class="row py-5">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let bar of barData.bars">
+          <div class="p-2">
+              <app-progress [maxVal]="barData.limit" [currentVal]="bar" [theme]="selectedTheme"></app-progress>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12" *ngIf="barData">
+      <div class="d-inline float-left mr-2">
+          <select class="form-control" (change)="selectedProgressBar=$event.target.selectedIndex;">
+            <option  
+              [value]="i" 
+              *ngFor="let bar of barData.bars;index as i;">{{'Progress Bar '+(i+1)}}</option>
+          </select>
+      </div>
+      <div class="d-inline float-right">
+          <button 
+            *ngFor="let b of barData.buttons"
+            (click)="changeProgresValue(b)"
+            type="button" 
+            class="btn ml-2" [style.color]="'#fff'" [style.backgroundColor]="selectedTheme">{{b}}</button>
+      </div>
+    </div>
+  </div> 
+</div>
