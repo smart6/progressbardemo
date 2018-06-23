@@ -67,7 +67,7 @@ export default {
     //Hits the api server and populates bars data
     loadRemoteData(){
       this.loading = true;
-      axios.get(`http://pb-api.herokuapp.com/bars`)
+      axios.get(`//pb-api.herokuapp.com/bars`)
       .then(response => {
         //Mimic the network delay - to show the loding animation.
         setTimeout(()=>{

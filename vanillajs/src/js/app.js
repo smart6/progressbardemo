@@ -9,7 +9,7 @@ var App  = (function(w,d,ac){
                     resolve(res);
                 }
             };
-            xhttp.open("GET", "http://pb-api.herokuapp.com/bars", true);
+            xhttp.open("GET", "//pb-api.herokuapp.com/bars", true);
             xhttp.send();
         })
     }

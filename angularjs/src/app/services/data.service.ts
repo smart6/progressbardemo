@@ -9,6 +9,6 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   loadData(){
-    return this.http.get('http://pb-api.herokuapp.com/bars').pipe(delay(1000))
+    return this.http.get('//pb-api.herokuapp.com/bars').pipe(delay(1000))
   }
 }
