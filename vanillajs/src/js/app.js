@@ -13,7 +13,13 @@ var App  = (function(w,d,ac){
             xhttp.send();
         })
     }
-    
+    function requestData(){
+        instance.loader.show();
+        loadDynamicData().then(function(data){
+            instance.loader.hide();
+            instance.buildProgressBars(data)
+        })
+    }
     var App = function(){
         this._bars = [];
         this._activeBar = null;
@@ -30,13 +36,7 @@ var App  = (function(w,d,ac){
         var btn = d.createElement('button');
         btn.innerText = 'Load Remote Data';
         btn.type = 'button';
-        btn.addEventListener('click',function(){
-            instance.loader.show();
-            loadDynamicData().then(function(data){
-                instance.loader.hide();
-                instance.buildProgressBars(data)
-            })
-        })
+        btn.addEventListener('click',requestData);
         controls.appendChild(btn);
         rootEl.appendChild(controls);
 
@@ -47,6 +47,8 @@ var App  = (function(w,d,ac){
 
         this._el = rootEl;
         d.body.appendChild(this._el);
+
+        requestData();
     }
     App.prototype.buildProgressBars = function(data){
         while(this._bc.firstChild){

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Progress Bar Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <style>
+      iframe{
+        width: 100%;
+        height: 500px;
+      }
+      .title.is-3{
+        margin-top: 40px;
+      }
+      .is-divider{
+        margin: 30px;
+        border-bottom: 2px solid #ddd;
+      }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        // Get all "navbar-burger" elements
+        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        // Check if there are any nav burgers
+        if ($navbarBurgers.length > 0) {
+          // Add a click event on each of them
+          $navbarBurgers.forEach(function ($el) {
+            $el.addEventListener('click', function () {
+              // Get the target from the "data-target" attribute
+              var target = $el.dataset.target;
+              var $target = document.getElementById(target);
+              // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+              $el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+            });
+          });
+        }
+        });
+    </script>
+  </head>
+  <body>
+    <nav class="navbar is-danger">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <span class="title is-4 has-text-white">Progress Bar Demo</span>
+        </a>
+        <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+          <a class="navbar-item has-text-weight-semibold" href="#vanillajs">Vanilla JS</a>
+          <a class="navbar-item has-text-weight-semibold" href="#vuejs">Vue JS</a>
+          <a class="navbar-item has-text-weight-semibold" href="#angularjs">Angular JS</a>
+          <a class="navbar-item has-text-weight-semibold" href="#angulardoc">Angular JS - Documentation </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container is-fullhd">
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Progress Bar Demo using Vanilla JS</h1>
+            <table class="table is-bordered">
+                <tbody>
+                  <tr>
+                    <th>Components</th>
+                    <td>Vanilla JS, Bootstrap 4 flex grid</td>
+                  </tr>
+                  <tr>
+                    <th>Tooling</th>
+                    <td>Gulp, Webpack</td>
+                  </tr>
+                  <tr>
+                    <th>Implementaion</th>
+                    <td>Outer 'div' defines boundary, Inner 'div' defines progress by changing the 'width'</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </section>
+      <iframe src="./vanillajs/index.html" frameborder="0" ></iframe>
+      <section class="hero is-light">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Progress Bar Demo using Vue JS</h1>
+              <table class="table is-bordered">
+                  <tbody>
+                    <tr>
+                      <th>Components</th>
+                      <td>Vue.js Components, Bulma css framework</td>
+                    </tr>
+                    <tr>
+                      <th>Tooling</th>
+                      <td>Babel,Webpack</td>
+                    </tr>
+                    <tr>
+                      <th>Implementaion</th>
+                      <td>Native 'progress' elements</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </section>
+      <iframe src="./vuejs/index.html" frameborder="0"></iframe>
+      <section class="hero is-light">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Progress Bar Demo using Angular JS</h1>
+              <table class="table is-bordered">
+                  <tbody>
+                    <tr>
+                      <th>Components</th>
+                      <td>Angular Components, Bootstrap css framework</td>
+                    </tr>
+                    <tr>
+                      <th>Tooling</th>
+                      <td>Typescript,Webpack</td>
+                    </tr>
+                    <tr>
+                      <th>Implementaion</th>
+                      <td>SVG</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </section>
+      <iframe src="./angularjs/index.html" frameborder="0"></iframe>
+      <section class="hero is-warning">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">API Documentaion for Angular Implemention</h1>
+              <h2 class="subtitle">Generated using 
+                <a href="https://compodoc.github.io/compodoc/">
+                  <img src="https://compodoc.github.io/compodoc/assets/img/logo.png">
+                </a>
+              </h2>
+            </div>
+          </div>
+        </section>
+      <iframe src="./angulardoc/index.html" frameborder="0"></iframe>
+    </div>
+  </body>
+</html>
