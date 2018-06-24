@@ -78,10 +78,18 @@ var App  = (function(w,d,ac){
         })
         instance._activeBar = this._bars[0];
         var col = d.createElement('div');
-            col.classList.add("col-control", "col-12");
+            col.classList.add("col-12","col-md-6");
+        var p = d.createElement('p');
+            p.innerText = 'Active Bar';
+            col.appendChild(p);
             instance._bc.appendChild(col);    
             col.appendChild(select);
-
+            col = d.createElement('div');
+            col.classList.add("col-12","col-md-6");
+            instance._bc.appendChild(col);
+            p = d.createElement('p');
+            p.innerText = 'Progress';
+            col.appendChild(p);
         data.buttons.forEach(function(v){
             var btn = d.createElement('button');
             btn.innerText = v;
