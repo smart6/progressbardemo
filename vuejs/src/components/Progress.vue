@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="has-padding-x">
     <span>{{getPercentage + '%'}}</span> 
     <progress class="progress" v-bind:class="computedClass" v-bind:value="currentValue" v-bind:max="maxVal"></progress>
   </div>

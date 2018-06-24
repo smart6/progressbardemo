@@ -3,7 +3,8 @@
     <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+          <img src="./assets/logo.png"  width="28" height="28">
+          <img src="./assets/bulma.png"  width="20" height="28">
         </a>
         <a class="navbar-item title is-5">
           Progress Bar Vue.js+Bulma
@@ -21,18 +22,26 @@
             <Progress :initialVal="item" :maxVal="data.limit" :ref="'bar-'+index"></Progress>
         </div>
       </div>
-      <div class="has-padding" v-if="data.bars">
-        <div class="field has-addons">
-          <div class="control">
-            <div class="select">
-              <select name="bar" v-model="selectedBar">
-                <option :value="'bar-'+index" v-for="(item, index) in data.bars">Progress Bar {{index+1}}</option>
-              </select>
+      <div class="columns is-multiline has-padding-x" v-if="data.bars">
+        <div class="column is-6-tablet">
+            <div class="field">
+              <label class="label">Active Bar</label>
+              <div class="control">
+                  <div class="select">
+                    <select name="bar" v-model="selectedBar">
+                      <option :value="'bar-'+index" v-for="(item, index) in data.bars">Progress Bar {{index+1}}</option>
+                    </select>
+                  </div>
+              </div>
             </div>
-          </div>
-          <div class="control" v-for="item in data.buttons">
-            <button :value="item" type="button" class="button is-primary" @click="changeProgressValue(selectedBar,item)">{{item}}</button>
-          </div>
+        </div>
+        <div class="column is-6-tablet">
+          <label class="label">Progress</label>
+          <div class="field is-grouped">
+            <div class="control" v-for="item in data.buttons">
+              <button :value="item" type="button" class="button is-primary" @click="changeProgressValue(selectedBar,item)">{{item}}</button>
+            </div>
+          </div>  
         </div>
       </div>
     </div>
