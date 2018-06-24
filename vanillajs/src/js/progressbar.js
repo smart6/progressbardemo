@@ -30,7 +30,7 @@
     }
     ProgressBar.prototype.adjustValue = function(value){
         this.cv=Math.max(0,this.cv+value);
-        self.render();
+        this.render();
     }
     w.AppComponents.ProgressBar = ProgressBar;
 })(window,document, window.AppComponents);
