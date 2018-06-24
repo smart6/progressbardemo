@@ -27,6 +27,11 @@ export class ProgressComponent implements OnInit {
     return Math.round(this.currentVal*100/this.maxVal);
   }
   progress(val:number){
-    this.currentVal = Math.max(0,this.currentVal+val);
+    //tally the animation delay.
+    ((cv,pv)=>{
+      setTimeout(()=>{
+        this.currentVal = Math.max(0,cv+pv);
+      },200)
+    })(this.currentVal,val)
   }
 }
